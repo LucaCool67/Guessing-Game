@@ -1,0 +1,88 @@
+const buttonContainer = document.querySelector(".button-container")
+const easyBtn = document.querySelector(".easy");
+const mediumBtn = document.querySelector(".medium");
+const hardBtn = document.querySelector(".hard");
+const attemptsDisplay = document.querySelector(".attemptsDisplay");
+const guess = document.querySelector(".guess")
+const guessDisplay = document.querySelector(".guessDisplay");
+const a = document.querySelector(".a");
+let easyNumber;
+let mediumNumber;
+let hardNumber;
+let numberOfAttempts = 0;
+let number;
+let currentGuess;
+
+function submitGuess(){
+
+    currentGuess = Number(guess.value);  
+    
+    switch(true){
+        case (number === currentGuess):
+            if(numberOfAttempts === 0){
+                numberOfAttempts = 1;
+            }
+            guessDisplay.textContent = `YOU WON IN ${numberOfAttempts} ATTEMPTS!`;
+            console.log(numberOfAttempts);
+            buttonContainer.classList.remove("slide-out")
+            buttonContainer.classList.add('slide-in');
+            numberOfAttempts = 0;
+            attemptsDisplay.textContent = `Number of Attempts: ${numberOfAttempts}`;
+            break;
+        case (currentGuess < number):
+            guessDisplay.textContent = "TOO SMALL, TRY AGAIN";
+            numberOfAttempts++;
+            console.log(numberOfAttempts);
+            attemptsDisplay.textContent = `Number of Attempts: ${numberOfAttempts}`;
+            break;
+        case (currentGuess >= number):
+            guessDisplay.textContent = "TOO BIG, TRY AGAIN"
+            numberOfAttempts++;
+            console.log(numberOfAttempts);
+            attemptsDisplay.textContent = `Number of Attempts: ${numberOfAttempts}`;
+            break;
+        
+    }
+}
+function easy(){
+
+
+    easyNumber = Math.floor(Math.random() * 10);
+    if(easyNumber === 0){
+        easyNumber = 1
+    }
+    number = easyNumber;
+    guessDisplay.textContent = "Please enter in your number";
+    /*buttonContainer.style.opacity = 0;*/
+    buttonContainer.classList.add('slide-out')
+    buttonContainer.classList.remove("slide-in")
+    console.log(number);
+    
+}
+function medium(){
+    easyNumber = Math.floor(Math.random() * 100);
+    if(easyNumber === 0){
+        easyNumber = 1
+    }
+    number = easyNumber;
+    guessDisplay.textContent = "Please enter in your number";
+    /*buttonContainer.style.opacity = 0;*/
+    buttonContainer.classList.add('slide-out')
+    buttonContainer.classList.remove("slide-in")
+    console.log(number);
+
+}
+function hard(){
+
+    easyNumber = Math.floor(Math.random() * 1000);
+    if(easyNumber === 0){
+        easyNumber = 1
+    }
+    number = easyNumber;
+    guessDisplay.textContent = "Please enter in your number";
+    /*buttonContainer.style.opacity = 0;*/
+    buttonContainer.classList.add('slide-out')
+    buttonContainer.classList.remove("slide-in")
+    console.log(number);
+
+}
