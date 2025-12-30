@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing</title>
+    <link rel="stylesheet" href="number.css">
+</head>
+<body>
+    <div class="a">
+        <div class="button-container">
+            <button type="button" class="easy" onclick="easy()">Easy</button>
+            <button type="button" class="medium" onclick="medium()">Medium</button>
+            <button type="button" class="hard" onclick="hard()">Hard</button>
+        </div>
+
+        <input type="text" class="guess" placeholder="Enter Your Guess Here">
+        <button type="submit" class="submitBtn" onclick="submitGuess()">Submit</button>
+
+        <p class="attemptsDisplay">Number of Attempts: </p>
+        <p class="guessDisplay">Please Select a difficulty</p>
+
+        <h4 class="rankings">Easy = 1 - 10</h4>
+        <h4 class="rankings">Medium = 1 - 100</h4>
+        <h4 class="rankings">Hard = 1 - 1000</h4>
+    </div>
+
+    
+    <script src="number.js"></script>
+</body>
+</html>
